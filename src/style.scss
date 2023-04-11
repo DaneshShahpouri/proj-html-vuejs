@@ -1,7 +1,14 @@
+@use './scss/variables' as *;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  font-family: 'PT Sans', sans-serif;
+
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -12,4 +19,45 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+.btn {
+  padding: 1em 2em;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: .7em;
+  font-weight: 800;
+
+  transition: all .4s;
+}
+
+.btn-neutro {
+  background-color: transparent;
+  color: darken($color: $Color2, $amount: 10);
+  font-size: .8em;
+
+  &:hover {
+    color: $Color2;
+  }
+}
+
+.btn-secondary {
+  background-color: darken($color: $Color3 , $amount: 20);
+  color: darken($color: $Color2, $amount: 10);
+
+
+  &:hover {
+    background-color: $Color3
+  }
+}
+
+.btn-primary {
+  background-color: darken($color: $Color1, $amount: 10);
+  color: darken($color: $Color2, $amount: 10);
+
+  &:hover {
+    background-color: $Color1;
+    color: $Color2;
+  }
 }

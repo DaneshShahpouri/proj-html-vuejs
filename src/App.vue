@@ -1,6 +1,8 @@
 <script>
 import { store } from './store.js';
 import AppNavbar from './components/AppNavbar.vue';
+import AppJumbo from './components/AppJumbo.vue';
+import AppMain from './components/AppMain.vue';
 
 export default {
   data() {
@@ -12,17 +14,36 @@ export default {
 
   components: {
     AppNavbar,
+    AppJumbo,
+    AppMain,
   },
+
+  methods: {
+
+  }
 }
 
 </script>
 
 <template>
   <div class="main-container">
-    <AppNavbar></AppNavbar>
+    <AppNavbar class="navbar"></AppNavbar>
+    <AppJumbo class="jumbo"></AppJumbo>
+    <AppMain></AppMain>
+
   </div>
 </template>
 
 <style lang= "scss" scoped>
 @use './scss/variables' as *;
+
+.navbar {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  position: fixed;
+}
+
+.jumbo {
+  padding-top: 70px;
+}
 </style>
