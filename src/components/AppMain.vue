@@ -1,6 +1,7 @@
 <script>
 import { store } from '../store.js';
 import AppMainFirstSection from './AppMainFirstSection.vue';
+import AppMainSecondSection from './AppMainSecondSection.vue';
 
 export default {
   name: 'AppMain',
@@ -14,12 +15,14 @@ export default {
 
   components: {
     AppMainFirstSection,
+    AppMainSecondSection,
   },
 }
 </script>
 
 <template>
   <AppMainFirstSection></AppMainFirstSection>
+  <AppMainSecondSection></AppMainSecondSection>
 </template>
 
 <style lang="scss" scoped>

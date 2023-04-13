@@ -24,13 +24,28 @@ export default {
       let win_pos = window.pageYOffset;
 
 
+      // Elementi con scroll
       let img = document.getElementById('img-bg');
-      let imgPos = img.getBoundingClientRect();
-      console.log(imgPos.top)
+      let textjumbo = document.getElementById('text-wrapper');
 
+      //Posizione degli elementi
+      let imgPos = img.getBoundingClientRect();
+      let textPos = textjumbo.getBoundingClientRect();
+
+      //jumbo bg
       if (win_pos > imgPos.top) {
         img.style.transform = "translateY(" + imgPos.top * -0.5 + "px)"
+      };
+
+      //jumbo testo
+      if (textPos.top < 750) {
+        textjumbo.classList.add('onfocus')
       }
+      // else if (textPos.top > 750) {
+      //   textjumbo.classList.remove('onfocus')
+      // }
+
+
     }
   }
 }
@@ -50,7 +65,7 @@ export default {
 
     <!-- Jumbo Down -->
     <div class="bottom-side">
-      <div class="text-wrapper">
+      <div class="text-wrapper" id="text-wrapper">
 
         <h2>Avada Forum is the place to be</h2>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus saepe quasi eveniet aliquam libero,
@@ -67,7 +82,7 @@ export default {
 
 .jumbo-container {
   width: 100%;
-  height: 110vh;
+  height: 120vh;
 
   .top-side {
     width: 100%;
@@ -148,11 +163,19 @@ export default {
     .text-wrapper {
       max-width: 1000px;
       margin: 1em auto;
+      opacity: 0;
 
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      animation: disappears .4s;
+
+      &.onfocus {
+        opacity: 1;
+
+        animation: appears 1s;
+      }
 
       h2 {
         text-transform: uppercase;
@@ -186,5 +209,31 @@ export default {
   100% {
     left: 0px;
   }
+}
+
+@keyframes appears {
+  0% {
+    opacity: 0;
+    padding-top: 12em;
+  }
+
+  100% {
+    opacity: 1;
+    padding-top: 0em;
+  }
+
+}
+
+@keyframes disappears {
+  0% {
+    opacity: 1;
+    padding-top: 0em;
+  }
+
+  100% {
+    opacity: 0;
+    padding-top: 2em;
+  }
+
 }
 </style>

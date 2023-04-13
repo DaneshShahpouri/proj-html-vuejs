@@ -48,7 +48,11 @@
 
 
   &:hover {
-    background-color: $Color3
+    background-color: $Color4
+  }
+
+  &:active {
+    background-color: darken($color: $Color4, $amount: 20);
   }
 }
 
@@ -59,5 +63,9 @@
   &:hover {
     background-color: $Color1;
     color: $Color2;
+  }
+
+  &:active {
+    background-color: darken($color: $Color1, $amount: 30);
   }
 }

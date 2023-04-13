@@ -3,6 +3,7 @@ import { store } from './store.js';
 import AppNavbar from './components/AppNavbar.vue';
 import AppJumbo from './components/AppJumbo.vue';
 import AppMain from './components/AppMain.vue';
+import AppFooter from './components/AppFooter.vue';
 
 export default {
   data() {
@@ -16,6 +17,7 @@ export default {
     AppNavbar,
     AppJumbo,
     AppMain,
+    AppFooter,
   },
 
   methods: {
@@ -30,6 +32,7 @@ export default {
     <AppNavbar class="navbar"></AppNavbar>
     <AppJumbo class="jumbo"></AppJumbo>
     <AppMain></AppMain>
+    <AppFooter></AppFooter>
 
   </div>
 </template>
